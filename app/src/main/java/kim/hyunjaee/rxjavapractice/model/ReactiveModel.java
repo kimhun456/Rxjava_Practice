@@ -9,9 +9,57 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class MainModel {
+public class ReactiveModel {
 
-    private static final String TAG = "MainModel";
+    private static final String TAG = "ReactiveModel";
+
+    public void doOperatorTimer() {
+        Observable.timer(10, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Long aLong) {
+                Log.d(TAG, "Timer : " + aLong);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
+    public void doOperatorRepeat() {
+        Observable.range(10, 20).repeat(2).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.d(TAG, "onNext : " + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 
     public void doOperatorRange() {
         Observable.range(10, 11).subscribe(

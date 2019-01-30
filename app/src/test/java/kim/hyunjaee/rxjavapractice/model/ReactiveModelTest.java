@@ -3,17 +3,17 @@ package kim.hyunjaee.rxjavapractice.model;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MainModelTest {
+public class ReactiveModelTest {
 
-    private MainModel mMainModel;
+    private ReactiveModel mReactiveModel;
 
     @Before
     public void setup() {
-        mMainModel = new MainModel();
+        mReactiveModel = new ReactiveModel();
     }
 
     @Test
     public void should_ShowNNumbers_WhenSubscribeIsHappen() {
-        mMainModel.doOperatorCreate();
+        mReactiveModel.doOperatorCreate();
     }
 }

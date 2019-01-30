@@ -3,26 +3,28 @@ package kim.hyunjaee.rxjavapractice;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import kim.hyunjaee.rxjavapractice.model.MainModel;
+import kim.hyunjaee.rxjavapractice.model.ReactiveModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainModel mMainModel;
+    private ReactiveModel mReactiveModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMainModel = new MainModel();
+        mReactiveModel = new ReactiveModel();
         doTest();
     }
 
     private void doTest() {
 
-        mMainModel.doOperatorFrom();
-        mMainModel.doOperatorCreate();
-        mMainModel.doOperatorJust();
-        mMainModel.doOperatorRange();
+        mReactiveModel.doOperatorFrom();
+        mReactiveModel.doOperatorCreate();
+        mReactiveModel.doOperatorJust();
+        mReactiveModel.doOperatorRange();
+        mReactiveModel.doOperatorRepeat();
+        mReactiveModel.doOperatorTimer();
     }
 }
