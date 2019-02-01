@@ -22,13 +22,20 @@ public class MainActivity extends AppCompatActivity {
         mTransformModel = new TransformModel();
         mFilterModel = new FilterModel();
 
-        mFilterModel.doDistinct();
+        doFilterTest();
+
 //        doTransformTest();
 //        doTest();
     }
 
     private void doFilterTest() {
         mFilterModel.doDistinct();
+        mFilterModel.doElementAt();
+        mFilterModel.doFilter();
+        mFilterModel.doIgnoreElemensts();
+        mFilterModel.doSampling();
+        mFilterModel.doSkipAndSkipLast();
+        mFilterModel.doTakeAndTakeLast();
     }
 
     private void doTransformTest() {
